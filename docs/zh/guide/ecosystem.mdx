@@ -1,0 +1,53 @@
+# 生态
+
+TomlSmith 分为五个仓库。Rust 库、CLI、语言服务器与 Playground 共用解析和格式化实现，另外两个仓库分别存放基准测试与视觉资源。
+
+## 仓库
+
+| 仓库 | 是什么 |
+| --- | --- |
+| [tomlsmith](https://github.com/tomlsmith/tomlsmith) | 核心：Rust 库（`tomlsmith`）、CLI（`tomlsmith-cli`）与语言服务器（`tomlsmith-lsp`） |
+| [playground](https://github.com/tomlsmith/playground) | 使用 WebAssembly 检查和格式化 TOML 的浏览器工作台 |
+| [vscode-plugin](https://github.com/tomlsmith/vscode-plugin) | `tomlsmith-lsp` 的 VS Code 扩展客户端 |
+| [benchmark](https://github.com/tomlsmith/benchmark) | 对比 TOML 检查器与格式化器的端到端 CLI 测量 |
+| [icon-assets](https://github.com/tomlsmith/icon-assets) | 项目图标与社交预览图的源文件和导出文件 |
+
+## Playground
+
+[Playground 源码仓库](https://github.com/tomlsmith/playground)会构建纯浏览器工作台：
+
+- 在 TOML 1.0 与 TOML 1.1 之间显式切换。
+- 分析结果与格式化预览随编辑自动刷新；只有你主动应用，才会写回源文件。
+- 按源码位置跳转诊断，悬停或使用键盘聚焦时可以查看信息。
+- 并排查看格式化后的文档、诊断、token 与文档统计。
+- 界面可选择英文或简体中文。
+
+分析与格式化在当前浏览器标签页本地运行，不上传源码。
+
+## 各部分如何协作
+
+<figure className="ts-architecture">
+  <svg viewBox="0 0 720 380" role="img" aria-labelledby="ecosystem-diagram-title-zh ecosystem-diagram-desc-zh">
+    <title id="ecosystem-diagram-title-zh">TomlSmith 各部分协作关系</title>
+    <desc id="ecosystem-diagram-desc-zh">TomlSmith 核心为命令行、Playground 和语言服务器提供解析、诊断、格式化与高亮能力，VS Code 插件连接语言服务器。</desc>
+    <rect className="ts-architecture__frame" x="150" y="24" width="420" height="116" rx="2" />
+    <text className="ts-architecture__core-name" x="360" y="65">tomlsmith</text>
+    <text className="ts-architecture__core-detail" x="360" y="101">解析器 · 诊断 ·</text>
+    <text className="ts-architecture__core-detail" x="360" y="126">格式化器 · 高亮</text>
+    <path className="ts-architecture__connector" d="M230 140v34 M360 140v102 M490 140v34 M490 242v58" />
+    <text className="ts-architecture__node-name" x="230" y="200">tomlsmith-cli</text>
+    <text className="ts-architecture__node-detail" x="230" y="228">（终端 / CI）</text>
+    <text className="ts-architecture__node-name" x="490" y="200">tomlsmith-lsp</text>
+    <text className="ts-architecture__node-detail" x="490" y="228">（任意编辑器）</text>
+    <text className="ts-architecture__node-name" x="360" y="268">playground</text>
+    <text className="ts-architecture__node-detail" x="360" y="296">（WASM，浏览器）</text>
+    <text className="ts-architecture__node-name" x="490" y="328">vscode-plugin</text>
+    <text className="ts-architecture__node-detail" x="490" y="356">（VS Code）</text>
+  </svg>
+</figure>
+
+`benchmark` 在测量 CLI 延迟与内存前检查各产品的输出；`icon-assets` 存放组织、网站、Playground 和编辑器扩展使用的视觉文件。
+
+## 参与贡献
+
+所有仓库均采用 MIT 许可证。提交 Pull Request 前请阅读对应仓库的 `CONTRIBUTING.md`，并遵守该仓库的行为准则。

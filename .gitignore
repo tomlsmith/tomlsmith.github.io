@@ -1,0 +1,22 @@
+node_modules/
+doc_build/
+coverage/
+*.tar.gz
+*.tgz
+*.zip
+*.wasm
+*.log
+.DS_Store
+
+# Generated deployments, raw benchmark captures, and archives are not site source.
+/docs/public/benchmarks/
+/docs/public/playground/
+
+# Local research, plans, reviews, and agent context are process artifacts.
+/CONTEXT.md
+/docs/adr/
+/docs/audits/
+/docs/plans/
+/docs/research/
+/docs/reviews/
+/docs/roadmap.md

@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "benchmarkRevision": "0d80720451db1503b190856d4a89387fa63b90a4",
+    "packages": {
+      "tomlsmith": "0.1.0",
+      "tomlsmith-cli": "0.1.0"
+    }
+  },
+  "environment": {
+    "measuredOn": "2026-08-31",
+    "operatingSystem": "macOS 26.5.2",
+    "architecture": "aarch64",
+    "cpu": "Apple M4 Pro",
+    "rustc": "1.92.0"
+  },
+  "lanes": [
+    {
+      "resultDirectory": "release-20260831-macos-arm64-check-v1_0-medium",
+      "laneId": "e2e/check/cold-stdin/1.0/v1_0_medium",
+      "operation": "check",
+      "tomlVersion": "1.0",
+      "fixtureId": "v1_0_medium",
+      "products": [
+        {
+          "id": "tomlsmith",
+          "displayName": "TomlSmith native CLI",
+          "medianMs": 10.214143241666667,
+          "throughputMibPerSecond": 12.250724355509407,
+          "peakRssMib": 7.640625
+        },
+        {
+          "id": "burntsushi-toml",
+          "displayName": "BurntSushi/toml tomlv",
+          "medianMs": 12.669549989583333,
+          "throughputMibPerSecond": 9.876487600919349,
+          "peakRssMib": 9.015625
+        },
+        {
+          "id": "taplo",
+          "displayName": "Taplo CLI",
+          "medianMs": 23.45700525,
+          "throughputMibPerSecond": 5.334468404970308,
+          "peakRssMib": 18.921875
+        },
+        {
+          "id": "tombi",
+          "displayName": "Tombi",
+          "medianMs": 196.538479,
+          "throughputMibPerSecond": 0.6366725438093355,
+          "peakRssMib": 26.875
+        }
+      ]
+    },
+    {
+      "resultDirectory": "release-20260831-macos-arm64-check-v1_1-medium",
+      "laneId": "e2e/check/cold-stdin/1.1/v1_1_medium",
+      "operation": "check",
+      "tomlVersion": "1.1",
+      "fixtureId": "v1_1_medium",
+      "products": [
+        {
+          "id": "tomlsmith",
+          "displayName": "TomlSmith native CLI",
+          "medianMs": 8.343811894871795,
+          "throughputMibPerSecond": 15.005164687784355,
+          "peakRssMib": 7.734375
+        },
+        {
+          "id": "burntsushi-toml",
+          "displayName": "BurntSushi/toml tomlv",
+          "medianMs": 9.310134298214287,
+          "throughputMibPerSecond": 13.447740665831118,
+          "peakRssMib": 9.015625
+        },
+        {
+          "id": "tombi",
+          "displayName": "Tombi",
+          "medianMs": 189.4095625,
+          "throughputMibPerSecond": 0.6610029079521543,
+          "peakRssMib": 27.015625
+        }
+      ]
+    },
+    {
+      "resultDirectory": "release-20260831-macos-arm64-format-v1_0-medium",
+      "laneId": "e2e/format/cold-stdin/1.0/v1_0_medium",
+      "operation": "format",
+      "tomlVersion": "1.0",
+      "fixtureId": "v1_0_medium",
+      "products": [
+        {
+          "id": "tomlsmith",
+          "displayName": "TomlSmith native CLI",
+          "medianMs": 8.360669436842105,
+          "throughputMibPerSecond": 14.966583038189171,
+          "peakRssMib": 8.375
+        },
+        {
+          "id": "go-toml-tomll",
+          "displayName": "pelletier/go-toml tomll",
+          "medianMs": 8.94125942,
+          "throughputMibPerSecond": 13.994745874552386,
+          "peakRssMib": 6.5
+        },
+        {
+          "id": "dprint",
+          "displayName": "dprint + TOML plugin",
+          "medianMs": 17.956531241666667,
+          "throughputMibPerSecond": 6.968531488475468,
+          "peakRssMib": 19.890625
+        },
+        {
+          "id": "taplo",
+          "displayName": "Taplo CLI",
+          "medianMs": 21.823940125,
+          "throughputMibPerSecond": 5.733641710188098,
+          "peakRssMib": 19.15625
+        },
+        {
+          "id": "prettier",
+          "displayName": "Prettier + prettier-plugin-toml",
+          "medianMs": 651.3317085,
+          "throughputMibPerSecond": 0.19211509550106243,
+          "peakRssMib": 564.28125
+        },
+        {
+          "id": "tombi",
+          "displayName": "Tombi",
+          "medianMs": 712.205937,
+          "throughputMibPerSecond": 0.1756944822847604,
+          "peakRssMib": 31.390625
+        }
+      ]
+    },
+    {
+      "resultDirectory": "release-20260831-macos-arm64-format-v1_1-medium",
+      "laneId": "e2e/format/cold-stdin/1.1/v1_1_medium",
+      "operation": "format",
+      "tomlVersion": "1.1",
+      "fixtureId": "v1_1_medium",
+      "products": [
+        {
+          "id": "go-toml-tomll",
+          "displayName": "pelletier/go-toml tomll",
+          "medianMs": 7.124317998803828,
+          "throughputMibPerSecond": 17.573650085168353,
+          "peakRssMib": 6.5
+        },
+        {
+          "id": "tomlsmith",
+          "displayName": "TomlSmith native CLI",
+          "medianMs": 8.078834481209151,
+          "throughputMibPerSecond": 15.497318567134045,
+          "peakRssMib": 8.421875
+        },
+        {
+          "id": "dprint",
+          "displayName": "dprint + TOML plugin",
+          "medianMs": 14.659571954545454,
+          "throughputMibPerSecond": 8.540513460737495,
+          "peakRssMib": 19.875
+        },
+        {
+          "id": "tombi",
+          "displayName": "Tombi",
+          "medianMs": 667.6615005,
+          "throughputMibPerSecond": 0.1875205796839941,
+          "peakRssMib": 31.796875
+        }
+      ]
+    }
+  ]
+}

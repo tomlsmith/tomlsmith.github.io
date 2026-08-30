@@ -1,0 +1,134 @@
+---
+pageType: custom
+title: TomlSmith · 检查和格式化 TOML 1.0 与 1.1
+---
+
+import { BenchmarkResults } from "../../theme/BenchmarkResults";
+
+<div className="ts-home">
+
+<section className="ts-hero">
+  <div>
+    <p className="ts-microlabel">TOML 1.0 + 1.1 · Rust</p>
+    <h1 className="ts-hero__title">TOML<b>SMITH</b></h1>
+    <p className="ts-hero__tagline">检查和格式化 TOML。</p>
+    <p className="ts-hero__desc">TomlSmith 提供 Rust 库、命令行工具、语言服务器和浏览器 Playground，每个入口都可明确选择 TOML 1.0 或 1.1。</p>
+    <div className="ts-hero__actions">
+      <a className="ts-btn ts-btn--brand" href="/zh/guide/introduction">快速开始</a>
+      <a className="ts-btn ts-btn--quiet" href="https://tomlsmith.github.io/playground/">打开 Playground ↗</a>
+      <a className="ts-btn ts-btn--quiet" href="https://github.com/tomlsmith/tomlsmith" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </div>
+  <figure className="ts-hero__panel">
+    <img src="/tomlsmith-icon.svg" alt="TomlSmith 图标：深蓝底上的白色铁砧与橙色等号" />
+    <figcaption>TOML 1.0 · TOML 1.1 · MIT 许可证</figcaption>
+  </figure>
+</section>
+
+<dl className="ts-stats">
+  <div className="ts-stat">
+    <dd>1,360 <small>/ 1,360</small></dd>
+    <dt>TOML 1.0 与 1.1 的 toml-test 解码用例通过数</dt>
+  </div>
+  <div className="ts-stat">
+    <dd>2 <small>个模式</small></dd>
+    <dt>分别实现已发布的 TOML 1.0 与 1.1 规范</dt>
+  </div>
+  <div className="ts-stat">
+    <dd>3 <small>个命令</small></dd>
+    <dt>check · fmt · parse</dt>
+  </div>
+  <div className="ts-stat">
+    <dd>4 <small>个入口</small></dd>
+    <dt>Rust 库 · CLI · 语言服务器 · 浏览器 Playground</dt>
+  </div>
+</dl>
+
+<BenchmarkResults locale="zh" />
+
+<section className="ts-section">
+  <p className="ts-microlabel">02 — 功能</p>
+  <h2 className="ts-section__title">TomlSmith 能做什么</h2>
+  <p className="ts-section__note">选择 TOML 1.0 或 1.1，然后运行 <code>check</code>、<code>fmt</code> 或 <code>parse</code>。</p>
+  <div className="ts-grid">
+    <article className="ts-card">
+      <span className="ts-card__index">01 · 版本</span>
+      <h3 className="ts-card__title">明确选择版本</h3>
+      <p className="ts-card__body">每次调用选择 TOML 1.0 或 1.1。Cargo 或其他只支持 1.0 的工具要读取文件时，使用 <code>--toml-version 1.0</code>。</p>
+    </article>
+    <article className="ts-card">
+      <span className="ts-card__index">02 · 检查</span>
+      <h3 className="ts-card__title">检查文档</h3>
+      <p className="ts-card__body"><code>check</code> 报告错误与警告，并包含源码区间和诊断码。</p>
+    </article>
+    <article className="ts-card">
+      <span className="ts-card__index">03 · 格式化</span>
+      <h3 className="ts-card__title">带保护的格式化</h3>
+      <p className="ts-card__body">已覆盖的场景会保留注释和字面量写法。有解析或语义错误的文档不会被改写；<code>fmt --check</code> 只检查，不修改文件。</p>
+    </article>
+    <article className="ts-card">
+      <span className="ts-card__index">04 · 自动化</span>
+      <h3 className="ts-card__title">读取 JSON 输出</h3>
+      <p className="ts-card__body"><code>parse</code> 输出 JSON，包含所选版本、文档是否有效以及诊断，供脚本和工具读取。</p>
+    </article>
+    <article className="ts-card">
+      <span className="ts-card__index">05 · Rust</span>
+      <h3 className="ts-card__title">使用 Rust API</h3>
+      <p className="ts-card__body">用 <code>Document</code> 解析一次，再查询诊断、格式化结果、高亮和解码后的值。</p>
+    </article>
+    <article className="ts-card">
+      <span className="ts-card__index">06 · 编辑器</span>
+      <h3 className="ts-card__title">使用编辑器或浏览器</h3>
+      <p className="ts-card__body">连接支持 LSP 的编辑器，使用 VS Code 客户端或浏览器 Playground。</p>
+    </article>
+  </div>
+</section>
+
+<section className="ts-section">
+  <p className="ts-microlabel">03 — 项目</p>
+  <h2 className="ts-section__title">项目仓库</h2>
+  <p className="ts-section__note">TomlSmith 分为五个仓库，每个仓库负责一类工作。</p>
+  <div className="ts-eco">
+    <a className="ts-eco-card" href="https://github.com/tomlsmith/tomlsmith" target="_blank" rel="noreferrer">
+      <span className="ts-eco-card__index">核心</span>
+      <h3 className="ts-eco-card__title">tomlsmith</h3>
+      <p className="ts-eco-card__body">Rust 库、CLI 与语言服务器，包含解析、诊断、格式化、高亮和解码后的值。</p>
+    </a>
+    <a className="ts-eco-card" href="https://github.com/tomlsmith/playground" target="_blank" rel="noreferrer">
+      <span className="ts-eco-card__index">浏览器</span>
+      <h3 className="ts-eco-card__title">tomlsmith/<b>playground</b></h3>
+      <p className="ts-eco-card__body">基于 WebAssembly 的浏览器工作台，在当前标签页本地运行，不上传源码。</p>
+    </a>
+    <a className="ts-eco-card" href="https://github.com/tomlsmith/vscode-plugin" target="_blank" rel="noreferrer">
+      <span className="ts-eco-card__index">编辑器</span>
+      <h3 className="ts-eco-card__title">tomlsmith/<b>vscode-plugin</b></h3>
+      <p className="ts-eco-card__body">tomlsmith-lsp 的 VS Code 客户端：诊断、格式化、语义高亮、悬停、符号、折叠。</p>
+    </a>
+    <a className="ts-eco-card" href="https://github.com/tomlsmith/benchmark" target="_blank" rel="noreferrer">
+      <span className="ts-eco-card__index">基准测试</span>
+      <h3 className="ts-eco-card__title">tomlsmith/<b>benchmark</b></h3>
+      <p className="ts-eco-card__body">测量 TOML 检查器与格式化器的 CLI 冷启动性能，计时前先检查输出正确性。</p>
+    </a>
+    <a className="ts-eco-card" href="https://github.com/tomlsmith/icon-assets" target="_blank" rel="noreferrer">
+      <span className="ts-eco-card__index">品牌</span>
+      <h3 className="ts-eco-card__title">tomlsmith/<b>icon-assets</b></h3>
+      <p className="ts-eco-card__body">项目图标、favicon、编辑器图标、头像和社交预览图的源文件与导出文件。</p>
+    </a>
+    <a className="ts-eco-card" href="https://github.com/tomlsmith/tomlsmith/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer">
+      <span className="ts-eco-card__index">加入</span>
+      <h3 className="ts-eco-card__title">参与贡献</h3>
+      <p className="ts-eco-card__body">提交 issue 或 Pull Request 前请阅读贡献指南；贡献内容采用 MIT 许可证。</p>
+    </a>
+  </div>
+</section>
+
+<section className="ts-cta">
+  <h2>试用 <b>TomlSmith</b></h2>
+  <p>按照快速上手运行 CLI，或无需安装即可使用浏览器 Playground。</p>
+  <div className="ts-cta__actions">
+    <a className="ts-btn ts-btn--brand" href="/zh/guide/introduction">快速开始</a>
+    <a className="ts-btn ts-btn--quiet" href="https://tomlsmith.github.io/playground/">打开 Playground ↗</a>
+  </div>
+</section>
+
+</div>

@@ -1,0 +1,11 @@
+allowBuilds:
+  '@parcel/watcher': true
+
+ignoredBuiltDependencies:
+  - core-js
+
+overrides:
+  # rspress's theme depends on react-syntax-highlighter@15, whose async hljs
+  # loader imports highlight.js/lib/languages/sql_more; that module only
+  # exists in highlight.js >= 10.6, so pin the 10.x resolution high enough.
+  highlight.js: 10.7.0

@@ -1,0 +1,30 @@
+---
+title: 性能数据
+---
+
+import { BenchmarkResults } from "../../../theme/BenchmarkResults";
+
+# 性能数据
+
+每一行都调用产品的直接 CLI 可执行文件；TomlSmith 使用 release 模式的 Rust `tomlsmith` 二进制。比较中不计入包管理器 launcher 或包装进程。
+
+> 复现命令、产品安装方式和测量实现统一维护在 [tomlsmith/benchmark 仓库](https://github.com/tomlsmith/benchmark)。原始运行目录保留在 Git 之外，生成的汇总数据会记录 benchmark revision 和精确包版本。
+
+<BenchmarkResults locale="zh" mode="page" />
+
+## 如何解读
+
+- 所有数字都是所选合成文档的冷启动端到端耗时中位数，越低越好；每个计时样本都会启动新进程。
+- TOML 1.0 与 1.1、`check` 与 `format` 是四条独立赛道，只能在同一块面板内比较。
+- 几个百分点以内的差异可能来自单次会话漂移，不应解读为稳定排序。
+- `tomll` 会丢弃注释并改写字面量，完成的工作少于保留注释的格式化器。
+
+## 测量契约
+
+这里测量产品 CLI，而不是解析器库：
+
+- TomlSmith 以 release 模式构建并直接调用 Rust 原生 CLI，与 Taplo、dprint 和 Go 工具保持相同的单进程边界。
+- 每个计时样本都会启动新进程，并使用 stdin/stdout/stderr。
+- TOML 1.0 与 1.1、`check` 与 `format` 都是独立赛道。
+- 计时前先执行正确性检查。Format 输出必须能按同一版本重新解析、保持解码内容不变，并在第二次格式化时不再变化。
+- Peak RSS 由额外的新进程测量，资源统计工具不会进入延迟样本。

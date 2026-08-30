@@ -1,0 +1,134 @@
+---
+pageType: custom
+title: TomlSmith · Check and format TOML 1.0 and 1.1
+---
+
+import { BenchmarkResults } from "../../theme/BenchmarkResults";
+
+<div className="ts-home">
+
+<section className="ts-hero">
+  <div>
+    <p className="ts-microlabel">TOML 1.0 + 1.1 · Rust</p>
+    <h1 className="ts-hero__title">TOML<b>SMITH</b></h1>
+    <p className="ts-hero__tagline">Check and format TOML.</p>
+    <p className="ts-hero__desc">Use TomlSmith from Rust, the command line, an editor, or the browser. Each interface supports explicit TOML 1.0 and 1.1 modes.</p>
+    <div className="ts-hero__actions">
+      <a className="ts-btn ts-btn--brand" href="/guide/introduction">Get started</a>
+      <a className="ts-btn ts-btn--quiet" href="https://tomlsmith.github.io/playground/">Open Playground ↗</a>
+      <a className="ts-btn ts-btn--quiet" href="https://github.com/tomlsmith/tomlsmith" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </div>
+  <figure className="ts-hero__panel">
+    <img src="/tomlsmith-icon.svg" alt="TomlSmith icon: a white anvil with an orange equals sign on a navy square" />
+    <figcaption>TOML 1.0 · TOML 1.1 · MIT license</figcaption>
+  </figure>
+</section>
+
+<dl className="ts-stats">
+  <div className="ts-stat">
+    <dd>1,360 <small>/ 1,360</small></dd>
+    <dt>toml-test decoder cases pass for TOML 1.0 and 1.1</dt>
+  </div>
+  <div className="ts-stat">
+    <dd>2 <small>modes</small></dd>
+    <dt>published TOML 1.0 and 1.1 specifications implemented separately</dt>
+  </div>
+  <div className="ts-stat">
+    <dd>3 <small>commands</small></dd>
+    <dt>check · fmt · parse</dt>
+  </div>
+  <div className="ts-stat">
+    <dd>4 <small>surfaces</small></dd>
+    <dt>Rust library · CLI · language server · browser playground</dt>
+  </div>
+</dl>
+
+<BenchmarkResults locale="en" />
+
+<section className="ts-section">
+  <p className="ts-microlabel">02 — Features</p>
+  <h2 className="ts-section__title">What TomlSmith does</h2>
+  <p className="ts-section__note">Choose TOML 1.0 or 1.1, then run <code>check</code>, <code>fmt</code>, or <code>parse</code>.</p>
+  <div className="ts-grid">
+    <article className="ts-card">
+      <span className="ts-card__index">01 · Versions</span>
+      <h3 className="ts-card__title">Explicit version modes</h3>
+      <p className="ts-card__body">Choose TOML 1.0 or 1.1 for each invocation. Use <code>--toml-version 1.0</code> for files read by Cargo or other 1.0-only tools.</p>
+    </article>
+    <article className="ts-card">
+      <span className="ts-card__index">02 · Check</span>
+      <h3 className="ts-card__title">Check documents</h3>
+      <p className="ts-card__body"><code>check</code> reports errors and warnings with source ranges and diagnostic codes.</p>
+    </article>
+    <article className="ts-card">
+      <span className="ts-card__index">03 · Formatting</span>
+      <h3 className="ts-card__title">Formatting with safeguards</h3>
+      <p className="ts-card__body">Formatting preserves comments and literal spellings in covered cases. Documents with parse or semantic errors are not rewritten, and <code>fmt --check</code> checks files without changing them.</p>
+    </article>
+    <article className="ts-card">
+      <span className="ts-card__index">04 · Automation</span>
+      <h3 className="ts-card__title">Read JSON output</h3>
+      <p className="ts-card__body"><code>parse</code> emits the selected version, validity, and diagnostics as JSON for scripts and tools.</p>
+    </article>
+    <article className="ts-card">
+      <span className="ts-card__index">05 · Rust</span>
+      <h3 className="ts-card__title">Use the Rust API</h3>
+      <p className="ts-card__body">Parse once with <code>Document</code>, then query diagnostics, formatted output, highlights, and decoded values.</p>
+    </article>
+    <article className="ts-card">
+      <span className="ts-card__index">06 · Editors</span>
+      <h3 className="ts-card__title">Use an editor or browser</h3>
+      <p className="ts-card__body">Connect an LSP-capable editor, use the VS Code client, or run the browser playground.</p>
+    </article>
+  </div>
+</section>
+
+<section className="ts-section">
+  <p className="ts-microlabel">03 — Projects</p>
+  <h2 className="ts-section__title">Project repositories</h2>
+  <p className="ts-section__note">TomlSmith is split across five repositories. Each repository has a separate role.</p>
+  <div className="ts-eco">
+    <a className="ts-eco-card" href="https://github.com/tomlsmith/tomlsmith" target="_blank" rel="noreferrer">
+      <span className="ts-eco-card__index">Core</span>
+      <h3 className="ts-eco-card__title">tomlsmith</h3>
+      <p className="ts-eco-card__body">The Rust library, CLI, and language server, including parsing, diagnostics, formatting, highlighting, and decoded values.</p>
+    </a>
+    <a className="ts-eco-card" href="https://github.com/tomlsmith/playground" target="_blank" rel="noreferrer">
+      <span className="ts-eco-card__index">Browser</span>
+      <h3 className="ts-eco-card__title">tomlsmith/<b>playground</b></h3>
+      <p className="ts-eco-card__body">A browser workbench built with WebAssembly. It runs locally in the tab and does not upload source.</p>
+    </a>
+    <a className="ts-eco-card" href="https://github.com/tomlsmith/vscode-plugin" target="_blank" rel="noreferrer">
+      <span className="ts-eco-card__index">Editor</span>
+      <h3 className="ts-eco-card__title">tomlsmith/<b>vscode-plugin</b></h3>
+      <p className="ts-eco-card__body">The VS Code client for tomlsmith-lsp: diagnostics, formatting, semantic highlighting, hover, symbols, and folding.</p>
+    </a>
+    <a className="ts-eco-card" href="https://github.com/tomlsmith/benchmark" target="_blank" rel="noreferrer">
+      <span className="ts-eco-card__index">Benchmarks</span>
+      <h3 className="ts-eco-card__title">tomlsmith/<b>benchmark</b></h3>
+      <p className="ts-eco-card__body">Cold-start CLI measurements for TOML checkers and formatters, with correctness checks before timing.</p>
+    </a>
+    <a className="ts-eco-card" href="https://github.com/tomlsmith/icon-assets" target="_blank" rel="noreferrer">
+      <span className="ts-eco-card__index">Brand</span>
+      <h3 className="ts-eco-card__title">tomlsmith/<b>icon-assets</b></h3>
+      <p className="ts-eco-card__body">Source files and exports for the project icon, favicons, editor icon, avatars, and social previews.</p>
+    </a>
+    <a className="ts-eco-card" href="https://github.com/tomlsmith/tomlsmith/blob/main/CONTRIBUTING.md" target="_blank" rel="noreferrer">
+      <span className="ts-eco-card__index">Join</span>
+      <h3 className="ts-eco-card__title">Contributing</h3>
+      <p className="ts-eco-card__body">Read the contribution guide before opening an issue or pull request. Contributions use the MIT license.</p>
+    </a>
+  </div>
+</section>
+
+<section className="ts-cta">
+  <h2>Try <b>TomlSmith</b></h2>
+  <p>Follow the quick start, or use the browser Playground without installing anything.</p>
+  <div className="ts-cta__actions">
+    <a className="ts-btn ts-btn--brand" href="/guide/introduction">Get started</a>
+    <a className="ts-btn ts-btn--quiet" href="https://tomlsmith.github.io/playground/">Open Playground ↗</a>
+  </div>
+</section>
+
+</div>

@@ -1,0 +1,53 @@
+# Ecosystem
+
+TomlSmith is split across five repositories. The Rust library, CLI, language server, and playground share the parsing and formatting implementation; the remaining repositories contain benchmarks and visual assets.
+
+## Repositories
+
+| Repository | What it is |
+| --- | --- |
+| [tomlsmith](https://github.com/tomlsmith/tomlsmith) | The core: Rust library (`tomlsmith`), CLI (`tomlsmith-cli`), and language server (`tomlsmith-lsp`) |
+| [playground](https://github.com/tomlsmith/playground) | Browser workbench for checking and formatting TOML with WebAssembly |
+| [vscode-plugin](https://github.com/tomlsmith/vscode-plugin) | The VS Code extension client for `tomlsmith-lsp` |
+| [benchmark](https://github.com/tomlsmith/benchmark) | End-to-end CLI measurements across TOML checkers and formatters |
+| [icon-assets](https://github.com/tomlsmith/icon-assets) | Source files and exports for project icons and social previews |
+
+## The playground
+
+The [playground source repository](https://github.com/tomlsmith/playground) builds a browser-only workbench:
+
+- Switch explicitly between TOML 1.0 and TOML 1.1.
+- Analysis and a format preview refresh automatically as you edit; the preview never touches your source until you choose to apply it.
+- Navigate diagnostics by source position and read messages on hover or keyboard focus.
+- Inspect the formatted document, diagnostics, tokens, and document statistics side by side.
+- Choose an English or Simplified Chinese interface.
+
+Analysis and formatting run locally in the current tab. Source is not uploaded.
+
+## How the pieces fit
+
+<figure className="ts-architecture">
+  <svg viewBox="0 0 720 380" role="img" aria-labelledby="ecosystem-diagram-title-en ecosystem-diagram-desc-en">
+    <title id="ecosystem-diagram-title-en">How the TomlSmith pieces fit</title>
+    <desc id="ecosystem-diagram-desc-en">The TomlSmith core provides parsing, diagnostics, formatting, and highlighting to the CLI, playground, and language server. The VS Code plugin connects to the language server.</desc>
+    <rect className="ts-architecture__frame" x="150" y="24" width="420" height="116" rx="2" />
+    <text className="ts-architecture__core-name" x="360" y="65">tomlsmith</text>
+    <text className="ts-architecture__core-detail" x="360" y="101">parser · diagnostics ·</text>
+    <text className="ts-architecture__core-detail" x="360" y="126">formatter · highlights</text>
+    <path className="ts-architecture__connector" d="M230 140v34 M360 140v102 M490 140v34 M490 242v58" />
+    <text className="ts-architecture__node-name" x="230" y="200">tomlsmith-cli</text>
+    <text className="ts-architecture__node-detail" x="230" y="228">(terminal / CI)</text>
+    <text className="ts-architecture__node-name" x="490" y="200">tomlsmith-lsp</text>
+    <text className="ts-architecture__node-detail" x="490" y="228">(any editor)</text>
+    <text className="ts-architecture__node-name" x="360" y="268">playground</text>
+    <text className="ts-architecture__node-detail" x="360" y="296">(WASM, browser)</text>
+    <text className="ts-architecture__node-name" x="490" y="328">vscode-plugin</text>
+    <text className="ts-architecture__node-detail" x="490" y="356">(VS Code)</text>
+  </svg>
+</figure>
+
+`benchmark` checks product output before measuring CLI latency and memory. `icon-assets` contains the files used by the organization, website, playground, and editor extension.
+
+## Contributing
+
+All repositories use the MIT license. Read the relevant `CONTRIBUTING.md` before opening a pull request and follow that repository's Code of Conduct.

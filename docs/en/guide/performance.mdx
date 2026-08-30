@@ -1,0 +1,35 @@
+---
+title: Performance
+---
+
+import { BenchmarkResults } from "../../../theme/BenchmarkResults";
+
+# Performance
+
+Every row invokes the product's direct CLI executable; TomlSmith uses the release-mode Rust `tomlsmith` binary. Package-manager launchers and wrapper processes are excluded from the comparison.
+
+> Reproduction commands, product setup, and the measurement harness are maintained in the [tomlsmith/benchmark repository](https://github.com/tomlsmith/benchmark). Raw run directories stay outside Git; generated summaries record the benchmark revision and exact package versions.
+
+<BenchmarkResults locale="en" mode="page" />
+
+## How to read the results
+
+- Every number is the median cold-start end-to-end latency for the selected synthetic document; lower is better, and every timed sample starts a new process.
+- TOML 1.0 and 1.1, and `check` and `format`, are four independent lanes. Compare products only within one panel.
+- Differences within a few percent can be session drift and should not be read as a stable ordering.
+- `tomll` discards comments and rewrites literal styles, so it performs less work than the comment-preserving formatters.
+
+## Measurement contract
+
+This comparison measures product CLIs, not parser libraries:
+
+- TomlSmith is built in release mode and invoked directly as the native Rust
+  CLI, matching the single-process boundary used by Taplo, dprint, and the Go
+  tools.
+- Every timed sample starts a fresh process and uses stdin/stdout/stderr.
+- TOML 1.0 and 1.1, and `check` and `format`, are separate lanes.
+- Correctness is checked before timing. Format output must reparse under the
+  same version, preserve decoded content, and remain unchanged on a second
+  format pass.
+- Peak RSS is measured in separate fresh processes so the resource meter does
+  not affect latency samples.
