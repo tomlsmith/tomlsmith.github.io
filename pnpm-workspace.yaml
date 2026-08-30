@@ -1,8 +1,6 @@
 allowBuilds:
   '@parcel/watcher': true
-
-ignoredBuiltDependencies:
-  - core-js
+  core-js: false
 
 overrides:
   # rspress's theme depends on react-syntax-highlighter@15, whose async hljs
