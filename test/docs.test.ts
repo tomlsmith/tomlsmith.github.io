@@ -108,7 +108,8 @@ describe("documentation integrity", () => {
       ),
     ).toBe(true);
     expect(data.provenance).toEqual({
-      benchmarkRevision: "0d80720451db1503b190856d4a89387fa63b90a4",
+      benchmarkRevision: "39fb1aaf16180f46d7e010b00cb3f365bf11f2d0",
+      runtimeInputsSha256: "315cbeb8ecbdfc5cb20eb71e4b0df13d6a077c05aecf2dcb3f5ea5a6ccdf5f84",
       packages: {
         tomlsmith: "0.1.0",
         "tomlsmith-cli": "0.1.0",
