@@ -584,104 +584,10 @@ html.dark .ts-hero__panel {
   text-underline-offset: 3px;
 }
 
-/* Benchmark evidence plate */
-
-.ts-benchmark-context {
-  margin: 20px 0 0;
-  color: var(--ts-muted);
-  font-family: var(--rp-font-family-mono);
-  font-size: 0.78rem;
-  line-height: 1.7;
-}
-
-.ts-benchmark-context a {
-  color: var(--ts-link);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.ts-benchmark-summary {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-top: 28px;
-  border: 1px solid var(--ts-line-strong);
-  border-radius: 2px;
-  background: var(--ts-head-bg);
-  box-shadow: var(--ts-shadow);
-  overflow: hidden;
-}
-
-.ts-benchmark-summary__metric {
-  position: relative;
-  display: grid;
-  gap: 5px;
-  min-width: 0;
-  padding: 21px 18px 19px;
-}
-
-.ts-benchmark-summary__metric + .ts-benchmark-summary__metric {
-  border-left: 1px solid color-mix(in srgb, var(--ts-head-sub) 28%, transparent);
-}
-
-.ts-benchmark-summary__metric::after {
-  position: absolute;
-  right: 18px;
-  bottom: 0;
-  left: 18px;
-  height: 3px;
-  background: var(--ts-accent);
-  content: "";
-  transform: scaleX(0.32);
-  transform-origin: left;
-}
-
-.ts-benchmark-summary__label {
-  color: var(--ts-head-sub);
-  font-family: var(--rp-font-family-mono);
-  font-size: 0.58rem;
-  font-weight: 760;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.ts-benchmark-summary__metric strong {
-  margin: 3px 0 2px;
-  color: var(--ts-head-ink);
-  font-family: var(--rp-font-family-mono);
-  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
-  font-weight: 780;
-  font-variant-numeric: tabular-nums;
-  line-height: 1.1;
-  white-space: nowrap;
-}
-
-.ts-benchmark-summary__metric > span:not(.ts-benchmark-summary__label) {
-  color: var(--ts-head-sub);
-  font-family: var(--rp-font-family-mono);
-  font-size: 0.56rem;
-  font-weight: 650;
-  letter-spacing: 0.025em;
-  line-height: 1.45;
-}
+/* Benchmark results */
 
 .ts-benchmark-results--page {
   margin: 24px 0 34px;
-}
-
-.ts-benchmark-results--page .ts-benchmark-summary {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.ts-benchmark-results--page .ts-benchmark-summary__metric:nth-child(3) {
-  border-left: 0;
-}
-
-.ts-benchmark-results--page .ts-benchmark-summary__metric:nth-child(n + 3) {
-  border-top: 1px solid color-mix(in srgb, var(--ts-head-sub) 28%, transparent);
-}
-
-.ts-benchmark-results--page .ts-bench {
-  grid-template-columns: minmax(0, 1fr);
 }
 
 /* Feature cards */
@@ -1003,18 +909,6 @@ html.dark .ts-cta {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .ts-benchmark-summary {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .ts-benchmark-summary__metric:nth-child(3) {
-    border-left: 0;
-  }
-
-  .ts-benchmark-summary__metric:nth-child(n + 3) {
-    border-top: 1px solid color-mix(in srgb, var(--ts-head-sub) 28%, transparent);
-  }
-
   .ts-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1037,15 +931,6 @@ html.dark .ts-cta {
   .ts-eco,
   .ts-stats {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .ts-benchmark-summary {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .ts-benchmark-summary__metric + .ts-benchmark-summary__metric {
-    border-top: 1px solid color-mix(in srgb, var(--ts-head-sub) 28%, transparent);
-    border-left: 0;
   }
 
   .ts-stat + .ts-stat {

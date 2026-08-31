@@ -74,13 +74,17 @@ describe("documentation integrity", () => {
     }
   });
 
-  test("performance pages explain where raw benchmark results are retained", () => {
+  test("performance pages link to the benchmark harness without internal run metadata", () => {
     const benchmarkComponent = readFileSync(
       join(repositoryRoot, "theme", "BenchmarkResults.tsx"),
       "utf8",
     );
     expect(benchmarkComponent).not.toContain("benchmarkData.evidencePath");
     expect(benchmarkComponent).not.toContain("benchmarkData.checksumPath");
+    expect(benchmarkComponent).not.toContain("benchmarkData.environment");
+    expect(benchmarkComponent).not.toContain("ts-benchmark-context");
+    expect(benchmarkComponent).not.toContain("SummaryPlate");
+    expect(benchmarkComponent).not.toContain("ts-benchmark-summary");
 
     for (const locale of ["en", "zh"] as const) {
       const performancePage = readFileSync(
@@ -88,7 +92,7 @@ describe("documentation integrity", () => {
         "utf8",
       );
       expect(performancePage).toContain("https://github.com/tomlsmith/benchmark");
-      expect(performancePage).toMatch(/outside Git|Git 之外/u);
+      expect(performancePage).not.toMatch(/outside Git|Git 之外|benchmark revision|精确包版本/u);
       expect(performancePage).not.toMatch(/complete evidence bundle|完整证据包|SHA-256/u);
     }
   });

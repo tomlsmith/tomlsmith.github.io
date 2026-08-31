@@ -13,8 +13,6 @@ const copy = {
     details: "See TOML 1.1 and all four lanes",
     compactLower: "median latency · lower is better",
     compactTomll: "* tomll does not preserve comments or literal styles.",
-    median: "median",
-    rss: "peak RSS",
     lower: "median latency · logarithmic scale · lower is better",
     tomll:
       "* tomll is a semantic re-printer: it discards comments and rewrites literal styles, so it does less work than the comment-preserving formatters.",
@@ -27,8 +25,6 @@ const copy = {
     details: "查看 TOML 1.1 与完整四条赛道",
     compactLower: "耗时中位数 · 越短越好",
     compactTomll: "* tomll 不保留注释和字面量写法。",
-    median: "耗时中位数",
-    rss: "Peak RSS",
     lower: "耗时中位数 · 对数刻度 · 越短越好",
     tomll:
       "* tomll 是语义重打印器，会丢弃注释并改写字面量，因此它完成的工作少于保留注释的格式化器。",
@@ -66,34 +62,6 @@ function barWidth(products: Product[], value: number) {
   const position =
     (Math.log(value) - Math.log(minimum)) / (Math.log(maximum) - Math.log(minimum));
   return 12 + position * 88;
-}
-
-function SummaryPlate({ locale }: { locale: Locale }) {
-  const text = copy[locale];
-  return (
-    <div className="ts-benchmark-summary" aria-label="TomlSmith benchmark summary">
-      {benchmarkData.lanes.map((lane) => {
-        const tomlsmith = lane.products.find((product) => product.id === "tomlsmith");
-        if (tomlsmith === undefined) {
-          return null;
-        }
-        return (
-          <article className="ts-benchmark-summary__metric" key={lane.laneId}>
-            <span className="ts-benchmark-summary__label">
-              {operationName(lane.operation, locale)} · TOML {lane.tomlVersion}
-            </span>
-            <strong>{formatLatency(tomlsmith.medianMs)}</strong>
-            <span>
-              {text.median} · {tomlsmith.throughputMibPerSecond.toFixed(2)} MiB/s
-            </span>
-            <span>
-              {tomlsmith.peakRssMib.toFixed(2)} MiB {text.rss}
-            </span>
-          </article>
-        );
-      })}
-    </div>
-  );
 }
 
 function ComparisonPanels({
@@ -184,31 +152,8 @@ function HomeComparison({ locale }: { locale: Locale }) {
 
 function DetailedResults({ locale }: { locale: Locale }) {
   const text = copy[locale];
-  const revision = benchmarkData.provenance.benchmarkRevision;
-  const environment = benchmarkData.environment;
-  const cliVersion = benchmarkData.provenance.packages["tomlsmith-cli"];
   return (
     <>
-      <p className="ts-benchmark-context">
-        {locale === "zh" ? (
-          <>
-            {environment.measuredOn} 在 {environment.cpu}、{environment.operatingSystem}、
-            {environment.architecture} 上测量；Rust {environment.rustc}，crates.io{" "}
-            <code>tomlsmith-cli {cliVersion}</code>，benchmark{" "}
-          </>
-        ) : (
-          <>
-            Measured {environment.measuredOn} on {environment.cpu}, {environment.operatingSystem},{" "}
-            {environment.architecture}; Rust {environment.rustc}, crates.io{" "}
-            <code>tomlsmith-cli {cliVersion}</code>, benchmark{" "}
-          </>
-        )}
-        <a href={"https://github.com/tomlsmith/benchmark/commit/" + revision}>
-          {revision.slice(0, 12)}
-        </a>
-        {locale === "zh" ? "。" : "."}
-      </p>
-      <SummaryPlate locale={locale} />
       <ComparisonPanels locale={locale} />
       <p className="ts-footnote">{text.tomll}</p>
     </>
