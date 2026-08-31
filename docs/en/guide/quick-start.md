@@ -5,7 +5,7 @@ Install the native TomlSmith CLI from crates.io.
 ## Install the CLI
 
 ```bash
-cargo install tomlsmith-cli --version '=0.1.0' --locked
+cargo install tomlsmith-cli --locked
 ```
 
 The crate declares Rust 1.85 as its minimum supported version. [rustup](https://rustup.rs) can install and select a compatible toolchain.

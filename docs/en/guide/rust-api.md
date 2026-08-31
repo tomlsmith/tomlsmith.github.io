@@ -4,9 +4,8 @@ The `tomlsmith` crate provides parsing, diagnostics, formatting, highlighting, a
 
 ## Add the dependency
 
-```toml
-[dependencies]
-tomlsmith = "=0.1.0"
+```bash
+cargo add tomlsmith
 ```
 
 ## Parse a document

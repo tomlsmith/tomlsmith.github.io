@@ -5,7 +5,7 @@
 ## 安装 CLI
 
 ```bash
-cargo install tomlsmith-cli --version '=0.1.0' --locked
+cargo install tomlsmith-cli --locked
 ```
 
 crate 声明的最低 Rust 版本是 1.85；可以使用 [rustup](https://rustup.rs) 安装并选择兼容工具链。

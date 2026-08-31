@@ -23,7 +23,7 @@ the [TOML version policy](/guide/version-policy).
 
 ## Other editors
 
-Install the server with `cargo install tomlsmith-lsp --version '=0.1.0' --locked`, then configure your editor's LSP client to launch the `tomlsmith-lsp` binary over stdio. This applies to Neovim, Helix, Emacs, and other editors with generic LSP support.
+Install the latest stable server with `cargo install tomlsmith-lsp --locked`, then configure your editor's LSP client to launch the `tomlsmith-lsp` binary over stdio. This applies to Neovim, Helix, Emacs, and other editors with generic LSP support.
 
 ## Browser playground
 

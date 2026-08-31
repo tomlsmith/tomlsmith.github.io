@@ -21,7 +21,7 @@
 
 ## 其他编辑器
 
-先用 `cargo install tomlsmith-lsp --version '=0.1.0' --locked` 安装服务器，再配置编辑器的 LSP 客户端通过 stdio 启动 `tomlsmith-lsp`。Neovim、Helix、Emacs 及其他支持通用 LSP 的编辑器都可以这样接入。
+先用 `cargo install tomlsmith-lsp --locked` 安装最新稳定版服务器，再配置编辑器的 LSP 客户端通过 stdio 启动 `tomlsmith-lsp`。Neovim、Helix、Emacs 及其他支持通用 LSP 的编辑器都可以这样接入。
 
 ## 浏览器 Playground
 

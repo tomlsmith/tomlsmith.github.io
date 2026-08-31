@@ -4,9 +4,8 @@
 
 ## 添加依赖
 
-```toml
-[dependencies]
-tomlsmith = "=0.1.0"
+```bash
+cargo add tomlsmith
 ```
 
 ## 解析文档
