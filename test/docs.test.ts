@@ -112,23 +112,23 @@ describe("documentation integrity", () => {
       ),
     ).toBe(true);
     expect(data.provenance).toEqual({
-      benchmarkRevision: "39fb1aaf16180f46d7e010b00cb3f365bf11f2d0",
-      runtimeInputsSha256: "315cbeb8ecbdfc5cb20eb71e4b0df13d6a077c05aecf2dcb3f5ea5a6ccdf5f84",
+      benchmarkRevision: "1b637243fcbd7ad82247676e8a1fe337187284f7",
+      runtimeInputsSha256: "61cee237479415d408a15bafa2f5284408024ea85b921d82c09cd3feeb8a4825",
       packages: {
-        tomlsmith: "0.1.0",
-        "tomlsmith-cli": "0.1.0",
+        tomlsmith: "0.4.0",
+        "tomlsmith-cli": "0.4.0",
       },
     });
     expect(data.environment).toEqual({
-      measuredOn: "2026-08-31",
-      operatingSystem: "macOS 26.5.2",
+      measuredOn: "2026-09-03",
+      operatingSystem: "macOS 26.6.2",
       architecture: "aarch64",
       cpu: "Apple M4 Pro",
       rustc: "1.92.0",
     });
     expect(
       data.lanes.every(({ resultDirectory }: { resultDirectory: string }) =>
-        resultDirectory.startsWith("release-20260831-macos-arm64-"),
+        resultDirectory.startsWith("release-20260903-macos-arm64-"),
       ),
     ).toBe(true);
     expect(data).not.toHaveProperty("evidencePath");

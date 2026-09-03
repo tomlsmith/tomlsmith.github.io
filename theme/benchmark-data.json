@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
   "provenance": {
-    "benchmarkRevision": "39fb1aaf16180f46d7e010b00cb3f365bf11f2d0",
-    "runtimeInputsSha256": "315cbeb8ecbdfc5cb20eb71e4b0df13d6a077c05aecf2dcb3f5ea5a6ccdf5f84",
+    "benchmarkRevision": "1b637243fcbd7ad82247676e8a1fe337187284f7",
+    "runtimeInputsSha256": "61cee237479415d408a15bafa2f5284408024ea85b921d82c09cd3feeb8a4825",
     "packages": {
-      "tomlsmith": "0.1.0",
-      "tomlsmith-cli": "0.1.0"
+      "tomlsmith": "0.4.0",
+      "tomlsmith-cli": "0.4.0"
     }
   },
   "environment": {
-    "measuredOn": "2026-08-31",
-    "operatingSystem": "macOS 26.5.2",
+    "measuredOn": "2026-09-03",
+    "operatingSystem": "macOS 26.6.2",
     "architecture": "aarch64",
     "cpu": "Apple M4 Pro",
     "rustc": "1.92.0"
   },
   "lanes": [
     {
-      "resultDirectory": "release-20260831-macos-arm64-check-v1_0-medium",
+      "resultDirectory": "release-20260903-macos-arm64-check-v1_0-medium",
       "laneId": "e2e/check/cold-stdin/1.0/v1_0_medium",
       "operation": "check",
       "tomlVersion": "1.0",
@@ -26,35 +26,35 @@
         {
           "id": "tomlsmith",
           "displayName": "TomlSmith native CLI",
-          "medianMs": 10.214143241666667,
-          "throughputMibPerSecond": 12.250724355509407,
-          "peakRssMib": 7.640625
+          "medianMs": 10.205408333333335,
+          "throughputMibPerSecond": 12.261209869735506,
+          "peakRssMib": 6.984375
         },
         {
           "id": "burntsushi-toml",
           "displayName": "BurntSushi/toml tomlv",
-          "medianMs": 12.669549989583333,
-          "throughputMibPerSecond": 9.876487600919349,
-          "peakRssMib": 9.015625
+          "medianMs": 12.068058350000001,
+          "throughputMibPerSecond": 10.368747792916302,
+          "peakRssMib": 8.96875
         },
         {
           "id": "taplo",
           "displayName": "Taplo CLI",
-          "medianMs": 23.45700525,
-          "throughputMibPerSecond": 5.334468404970308,
-          "peakRssMib": 18.921875
+          "medianMs": 23.3388645625,
+          "throughputMibPerSecond": 5.36147133663061,
+          "peakRssMib": 18.59375
         },
         {
           "id": "tombi",
           "displayName": "Tombi",
-          "medianMs": 196.538479,
-          "throughputMibPerSecond": 0.6366725438093355,
-          "peakRssMib": 26.875
+          "medianMs": 206.803896,
+          "throughputMibPerSecond": 0.6050691297486371,
+          "peakRssMib": 27.25
         }
       ]
     },
     {
-      "resultDirectory": "release-20260831-macos-arm64-check-v1_1-medium",
+      "resultDirectory": "release-20260903-macos-arm64-check-v1_1-medium",
       "laneId": "e2e/check/cold-stdin/1.1/v1_1_medium",
       "operation": "check",
       "tomlVersion": "1.1",
@@ -63,28 +63,28 @@
         {
           "id": "tomlsmith",
           "displayName": "TomlSmith native CLI",
-          "medianMs": 8.343811894871795,
-          "throughputMibPerSecond": 15.005164687784355,
-          "peakRssMib": 7.734375
+          "medianMs": 8.165616181818182,
+          "throughputMibPerSecond": 15.33261774968314,
+          "peakRssMib": 6.953125
         },
         {
           "id": "burntsushi-toml",
           "displayName": "BurntSushi/toml tomlv",
-          "medianMs": 9.310134298214287,
-          "throughputMibPerSecond": 13.447740665831118,
-          "peakRssMib": 9.015625
+          "medianMs": 10.07112384375,
+          "throughputMibPerSecond": 12.431608780597298,
+          "peakRssMib": 8.890625
         },
         {
           "id": "tombi",
           "displayName": "Tombi",
-          "medianMs": 189.4095625,
-          "throughputMibPerSecond": 0.6610029079521543,
-          "peakRssMib": 27.015625
+          "medianMs": 193.3125415,
+          "throughputMibPerSecond": 0.6476572633878765,
+          "peakRssMib": 27.28125
         }
       ]
     },
     {
-      "resultDirectory": "release-20260831-macos-arm64-format-v1_0-medium",
+      "resultDirectory": "release-20260903-macos-arm64-format-v1_0-medium",
       "laneId": "e2e/format/cold-stdin/1.0/v1_0_medium",
       "operation": "format",
       "tomlVersion": "1.0",
@@ -93,81 +93,81 @@
         {
           "id": "tomlsmith",
           "displayName": "TomlSmith native CLI",
-          "medianMs": 8.360669436842105,
-          "throughputMibPerSecond": 14.966583038189171,
-          "peakRssMib": 8.375
+          "medianMs": 8.345570126923077,
+          "throughputMibPerSecond": 14.993661484872336,
+          "peakRssMib": 6.953125
         },
         {
           "id": "go-toml-tomll",
           "displayName": "pelletier/go-toml tomll",
-          "medianMs": 8.94125942,
-          "throughputMibPerSecond": 13.994745874552386,
-          "peakRssMib": 6.5
+          "medianMs": 10.913395282608695,
+          "throughputMibPerSecond": 11.465785865994668,
+          "peakRssMib": 6.453125
         },
         {
           "id": "dprint",
           "displayName": "dprint + TOML plugin",
-          "medianMs": 17.956531241666667,
-          "throughputMibPerSecond": 6.968531488475468,
-          "peakRssMib": 19.890625
+          "medianMs": 20.120377604166663,
+          "throughputMibPerSecond": 6.2191006472679105,
+          "peakRssMib": 19.9375
         },
         {
           "id": "taplo",
           "displayName": "Taplo CLI",
-          "medianMs": 21.823940125,
-          "throughputMibPerSecond": 5.733641710188098,
-          "peakRssMib": 19.15625
-        },
-        {
-          "id": "prettier",
-          "displayName": "Prettier + prettier-plugin-toml",
-          "medianMs": 651.3317085,
-          "throughputMibPerSecond": 0.19211509550106243,
-          "peakRssMib": 564.28125
+          "medianMs": 22.0740599375,
+          "throughputMibPerSecond": 5.668674169393387,
+          "peakRssMib": 18.765625
         },
         {
           "id": "tombi",
           "displayName": "Tombi",
-          "medianMs": 712.205937,
-          "throughputMibPerSecond": 0.1756944822847604,
-          "peakRssMib": 31.390625
+          "medianMs": 655.136438,
+          "throughputMibPerSecond": 0.19099937985947846,
+          "peakRssMib": 31.859375
+        },
+        {
+          "id": "prettier",
+          "displayName": "Prettier + prettier-plugin-toml",
+          "medianMs": 678.412521,
+          "throughputMibPerSecond": 0.18444626168883407,
+          "peakRssMib": 594.09375
         }
       ]
     },
     {
-      "resultDirectory": "release-20260831-macos-arm64-format-v1_1-medium",
+      "resultDirectory": "release-20260903-macos-arm64-format-v1_1-medium",
       "laneId": "e2e/format/cold-stdin/1.1/v1_1_medium",
       "operation": "format",
       "tomlVersion": "1.1",
       "fixtureId": "v1_1_medium",
       "products": [
         {
-          "id": "go-toml-tomll",
-          "displayName": "pelletier/go-toml tomll",
-          "medianMs": 7.124317998803828,
-          "throughputMibPerSecond": 17.573650085168353,
-          "peakRssMib": 6.5
-        },
-        {
           "id": "tomlsmith",
           "displayName": "TomlSmith native CLI",
-          "medianMs": 8.078834481209151,
-          "throughputMibPerSecond": 15.497318567134045,
-          "peakRssMib": 8.421875
+          "medianMs": 8.362284561085973,
+          "throughputMibPerSecond": 14.972017597806564,
+          "peakRssMib": 7.015625
+        },
+        {
+          "id": "go-toml-tomll",
+          "displayName": "pelletier/go-toml tomll",
+          "medianMs": 9.870651041666667,
+          "throughputMibPerSecond": 12.684094603075456,
+          "peakRssMib": 6.5625
         },
         {
           "id": "dprint",
           "displayName": "dprint + TOML plugin",
-          "medianMs": 14.659571954545454,
-          "throughputMibPerSecond": 8.540513460737495,
-          "peakRssMib": 19.875
+          "medianMs": 18.988364027777777,
+          "throughputMibPerSecond": 6.593525983770472,
+          "peakRssMib": 19.9375
         },
         {
           "id": "tombi",
           "displayName": "Tombi",
-          "medianMs": 667.6615005,
-          "throughputMibPerSecond": 0.1875205796839941,
-          "peakRssMib": 31.796875
+          "medianMs": 721.461979,
+          "throughputMibPerSecond": 0.17353689487557225,
+          "peakRssMib": 31.546875
         }
       ]
     }
