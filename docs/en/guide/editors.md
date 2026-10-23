@@ -13,9 +13,7 @@
 
 The implemented editor surface does not include Schema-backed completion or code actions.
 
-The server defaults to TOML 1.0 when the client supplies no `tomlVersion`.
-Clients can select 1.1 in initialization options or configuration updates; see
-the [TOML version policy](/guide/version-policy).
+The server defaults to TOML 1.1 when the client supplies no `tomlVersion`. Clients can select 1.0 in initialization options or configuration updates when a file must remain compatible with a 1.0-only consumer; see the [TOML version policy](/guide/version-policy).
 
 ## VS Code
 

@@ -13,7 +13,7 @@
 
 已实现的编辑器能力不包括基于 schema 的补全与 code action。
 
-客户端未提供 `tomlVersion` 时，服务器默认使用 TOML 1.0。客户端可在初始化参数或配置更新中选择 1.1，详见 [TOML 版本策略](/zh/guide/version-policy)。
+客户端未提供 `tomlVersion` 时，服务器默认使用 TOML 1.1。如果文件需要兼容仅支持 1.0 的消费端，客户端应在初始化参数或配置更新中显式选择 1.0，详见 [TOML 版本策略](/zh/guide/version-policy)。
 
 ## VS Code
 

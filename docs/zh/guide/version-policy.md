@@ -9,10 +9,10 @@ TomlSmith 将已发布的 TOML 1.0.0 与 TOML 1.1.0 规范实现为两个独立�
 | Rust `Document::parse` 与 `FormatOptions::default` | TOML 1.1 |
 | 原生 CLI 与 `@tomlsmith/cli` | TOML 1.1 |
 | 新建或重置后的浏览器 Playground | TOML 1.1 |
-| 客户端未配置时的 `tomlsmith-lsp` | TOML 1.0 |
-| TomlSmith for VS Code | TOML 1.0 |
+| 客户端未配置时的 `tomlsmith-lsp` | TOML 1.1 |
+| TomlSmith for VS Code | TOML 1.1 |
 
-库、CLI 与 Playground 面向新的独立文档，默认使用 1.1。编辑器入口以 1.0 作为兼容性默认值，因为许多生态消费者仍只接受 1.0。TomlSmith 不会根据文件名推断语言版本。
+所有产品入口均默认使用 TOML 1.1。如果文件需要由仅支持 1.0 的工具读取，应显式选择 TOML 1.0；编辑器默认设置不会强制保证这项兼容性。TomlSmith 不会根据文件名推断语言版本。
 
 ## 接入时显式选择
 
