@@ -14,9 +14,9 @@ Every row invokes the product's direct CLI executable; TomlSmith uses the releas
 
 ## How to read the results
 
-- Every number is the median cold-start end-to-end latency for the selected synthetic document; lower is better, and every timed sample starts a new process.
+- Latency is the cold-start end-to-end median for the selected synthetic document; lower is better, and every timed sample starts a new process. These results use TomlSmith 0.4.1, measured on 2026-10-23.
 - TOML 1.0 and 1.1, and `check` and `format`, are four independent lanes. Compare products only within one panel.
-- Differences within a few percent can be session drift and should not be read as a stable ordering.
+- Each lane ran in three sequential sessions. The displayed median, throughput, and Peak RSS come from session 2, selected before measurement. The session range is the minimum and maximum of all three latency medians, not a confidence interval; overlapping ranges or differences within that drift do not establish a stable ordering.
 - `tomll` discards comments and rewrites literal styles, so it performs less work than the comment-preserving formatters.
 
 ## Measurement contract

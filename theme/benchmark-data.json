@@ -1,173 +1,597 @@
 {
   "schemaVersion": 1,
   "provenance": {
-    "benchmarkRevision": "1b637243fcbd7ad82247676e8a1fe337187284f7",
-    "runtimeInputsSha256": "61cee237479415d408a15bafa2f5284408024ea85b921d82c09cd3feeb8a4825",
+    "benchmarkRevision": "d7a8395c1d44d11ca061d1eb32c544a3a62daf8b",
+    "runtimeInputsSha256": "d42fcc159ca7a9832fa13d314fb13109b3cd63c8fd2388d70a2bffdefb130baf",
     "packages": {
-      "tomlsmith": "0.4.0",
-      "tomlsmith-cli": "0.4.0"
+      "tomlsmith": "0.4.1",
+      "tomlsmith-cli": "0.4.1"
     }
   },
   "environment": {
-    "measuredOn": "2026-09-03",
-    "operatingSystem": "macOS 26.6.2",
+    "measuredOn": "2026-10-23",
+    "operatingSystem": "macOS 27.2",
     "architecture": "aarch64",
     "cpu": "Apple M4 Pro",
     "rustc": "1.92.0"
   },
+  "measurement": {
+    "sessions": 3,
+    "primarySession": 2,
+    "selection": "Session 2 was selected before measurement; sessions 1 and 3 quantify observed drift.",
+    "warmUpSeconds": 3,
+    "measurementSeconds": 5,
+    "samplesPerSession": 30,
+    "peakRssSamplesPerSession": 3,
+    "range": "Minimum and maximum of the three session medians, not a confidence interval."
+  },
+  "runtimeInputs": {
+    "corpusManifestSha256": "8cdc37dde86b9e14dd6bc191d61bff4d3004afa71c498dbb8acd416c7c114726",
+    "cargoLockSha256": "1ced42d798c84afacf0d27e239fe11c7d71894820e2a9298e5937e7efacdcec5",
+    "build": {
+      "target_triple": "aarch64-apple-darwin",
+      "cargo_profile": {
+        "name": "bench",
+        "opt_level": 3,
+        "debug": false,
+        "lto": false,
+        "codegen_units": 16,
+        "incremental": false
+      },
+      "metadata_collector_profile": "debug",
+      "rustflags": null,
+      "rustdocflags": null,
+      "allocator": "rust_std_default_system",
+      "allocator_note": "no custom #[global_allocator] is configured by either benchmark binary"
+    },
+    "rustc": "rustc 1.92.0 (ded5c06cf 2025-12-08)\nbinary: rustc\ncommit-hash: ded5c06cf21d2b93bffd5d884aa6e96934ee4234\ncommit-date: 2025-12-08\nhost: aarch64-apple-darwin\nrelease: 1.92.0\nLLVM version: 21.1.3",
+    "cargo": "cargo 1.92.0 (344c4567c 2025-10-21)\nrelease: 1.92.0\ncommit-hash: 344c4567c634a25837e3c3476aac08af84cf9203\ncommit-date: 2025-10-21\nhost: aarch64-apple-darwin\nlibgit2: 1.9.1 (sys:0.20.2 vendored)\nlibcurl: 8.7.1 (sys:0.4.83+curl-8.15.0 system ssl:(SecureTransport) LibreSSL/3.3.6)\nssl: OpenSSL 3.5.4 30 Sep 2025\nos: Mac OS 27.2.0 [64-bit]",
+    "runtimes": {
+      "go": "go version go1.26.5 darwin/arm64",
+      "node": "v26.5.0"
+    },
+    "products": [
+      {
+        "id": "tomlsmith",
+        "version": "0.4.1",
+        "binarySha256": "7e8fd2bc3c0b313dae349f281725d3d4befd84aa908f2f7c1cbae206b82cec03",
+        "companionVersion": null,
+        "companionPackageJsonSha256": null,
+        "companionEntrySha256": null
+      },
+      {
+        "id": "tombi",
+        "version": "1.4.1",
+        "binarySha256": "9a84a82ff9a95bebdf758c45053ead58aae5dad396e3326b4c3862a8358fcb9c",
+        "companionVersion": null,
+        "companionPackageJsonSha256": null,
+        "companionEntrySha256": null
+      },
+      {
+        "id": "taplo",
+        "version": "0.10.0",
+        "binarySha256": "13cd257c1cadb003b40daf82b3fb1451e012e2463b760bdd33df07a07970c604",
+        "companionVersion": null,
+        "companionPackageJsonSha256": null,
+        "companionEntrySha256": null
+      },
+      {
+        "id": "prettier",
+        "version": "3.9.6",
+        "binarySha256": "fc1270760ec3612ba9fe2503d5343aada0e7ee5a37ebe60b041712cc75d49120",
+        "companionVersion": "2.0.6",
+        "companionPackageJsonSha256": "c7def101c74a42fef88f7a419a0c4b56d997c29d14577e11ab6700f28f47f518",
+        "companionEntrySha256": "3558ca2bf48b500346de4b7ff1d2fbc2b8b176dfa1da90ab78f20442f6023f83"
+      },
+      {
+        "id": "dprint",
+        "version": "0.56.1",
+        "binarySha256": "8c0b7ce72cbd514636c59e8797de760009957ca17f8b9bc7fcd0c69b7a47fd76",
+        "companionVersion": null,
+        "companionPackageJsonSha256": null,
+        "companionEntrySha256": null
+      },
+      {
+        "id": "burntsushi-toml",
+        "version": "1.6.0",
+        "binarySha256": "7e556433bb337cb6360a82fbe9ecd01227da81267552e43f5276a01f2fb27d68",
+        "companionVersion": null,
+        "companionPackageJsonSha256": null,
+        "companionEntrySha256": null
+      },
+      {
+        "id": "go-toml-tomll",
+        "version": "2.4.3",
+        "binarySha256": "39440adc24026285ba97cebff1490900305a6b3cb6fa7375da86308dcc789247",
+        "companionVersion": null,
+        "companionPackageJsonSha256": null,
+        "companionEntrySha256": null
+      }
+    ]
+  },
+  "bundles": [
+    {
+      "resultDirectory": "release-20261023-041-macos-arm64-s1-check-v1_0_medium",
+      "environmentSha256": "7c266f3d76b29b8d28562e1c1355d9b0d0b1ad09d056385c521fe4120b36d191",
+      "verificationSha256": "0aa0dc8a3802d4f381b465820a6563bc3f2c6a4c6711d530ef4c52bcecc4cbc3",
+      "peakRssSha256": "f18d35ab5e96de008a0e86f7e6b7837edbe1b8fc9c7bd40a25b9d5c3779da750",
+      "rawCsvSha256": {
+        "criterion/e2e_check_cold-stdin_1.0_v1_0_medium/burntsushi-toml/new/raw.csv": "1f9f9d1bd673d61f1602f69a4f150067c35f0a4c868e6ca6bf4e2868d418d733",
+        "criterion/e2e_check_cold-stdin_1.0_v1_0_medium/taplo/new/raw.csv": "6a5cbddebe2e22d836485a0393817b4f81f656333a809940223dc5efe20cedcd",
+        "criterion/e2e_check_cold-stdin_1.0_v1_0_medium/tombi/new/raw.csv": "b7d431f022e9edb57b8b66fa59bbc9acdb9334e7e17f1979b5b4517e1c5a86ce",
+        "criterion/e2e_check_cold-stdin_1.0_v1_0_medium/tomlsmith/new/raw.csv": "a5afeace00d4e28967b190e52e78510d43fec3262ac963ba3fb155942c523a89"
+      }
+    },
+    {
+      "resultDirectory": "release-20261023-041-macos-arm64-s2-check-v1_0_medium",
+      "environmentSha256": "12f4a6de5120ba78643f42e78da3058916a2f012d8456925675c6dc00859249c",
+      "verificationSha256": "0aa0dc8a3802d4f381b465820a6563bc3f2c6a4c6711d530ef4c52bcecc4cbc3",
+      "peakRssSha256": "ad5ac87813618f921e0ed6e8c9bc888a9c9e1c1e6bbf8bea62e84a3b3852344f",
+      "rawCsvSha256": {
+        "criterion/e2e_check_cold-stdin_1.0_v1_0_medium/burntsushi-toml/new/raw.csv": "f0cbd0cb5add035828e57feb5be99e4fdada6ba532e5a71c62bb17109a727b0e",
+        "criterion/e2e_check_cold-stdin_1.0_v1_0_medium/taplo/new/raw.csv": "da1550f65cbdbbe4c5db03689570e7443421fed0a02a7882e171a18edafd7dfa",
+        "criterion/e2e_check_cold-stdin_1.0_v1_0_medium/tombi/new/raw.csv": "56fb9c8ebb3517acc6637daecc7a97a6d06099bf7407133fc26f2ed3b7a50b6e",
+        "criterion/e2e_check_cold-stdin_1.0_v1_0_medium/tomlsmith/new/raw.csv": "d94cf760d9ec0b09006ea71822e23403098be8d3c2282fae6fb93de6a8096f37"
+      }
+    },
+    {
+      "resultDirectory": "release-20261023-041-macos-arm64-s3-check-v1_0_medium",
+      "environmentSha256": "2384be17951e0fda6784fa07bcc642dd9f1739765254c702cb878d2d49ea10bd",
+      "verificationSha256": "0aa0dc8a3802d4f381b465820a6563bc3f2c6a4c6711d530ef4c52bcecc4cbc3",
+      "peakRssSha256": "536b0524aa1287e581343a6827c7248346dbfab5f5e410a7fb9f77026dc9697d",
+      "rawCsvSha256": {
+        "criterion/e2e_check_cold-stdin_1.0_v1_0_medium/burntsushi-toml/new/raw.csv": "69599dc18d36b20beac33259324d2aefc20fd8cd5820954d813a977a2caf90f8",
+        "criterion/e2e_check_cold-stdin_1.0_v1_0_medium/taplo/new/raw.csv": "1bd2fe4deb0f0515d5cb1d4272feacfae6afd6b80342ac8feb9d69e26a7f6c7c",
+        "criterion/e2e_check_cold-stdin_1.0_v1_0_medium/tombi/new/raw.csv": "0ac6774d684fb76a1a2db369803c9f9cd073d6712e6e3fa3f26bfee1dc1ebc7e",
+        "criterion/e2e_check_cold-stdin_1.0_v1_0_medium/tomlsmith/new/raw.csv": "27232a1d5a02b77aa01e07aa4ff4f77db4b8134c61cd0b984d09192f4a78ca58"
+      }
+    },
+    {
+      "resultDirectory": "release-20261023-041-macos-arm64-s1-check-v1_1_medium",
+      "environmentSha256": "9b9fff55d8f7a16b67f63e83f819a676de1c5a783bd1fbdb97f8c0ebca3658ac",
+      "verificationSha256": "514462bc7a0b33c994cc514807ca71d7ccae1b0874c53bbcca70da053e56c38b",
+      "peakRssSha256": "5bb0e203414d8ed152bf1c6f6ac29ec3a1912ac4c7653121a965cec84dc49dd4",
+      "rawCsvSha256": {
+        "criterion/e2e_check_cold-stdin_1.1_v1_1_medium/burntsushi-toml/new/raw.csv": "ed4536b90cd06d62c22bb6cba4869cabf5c5ef3e6cd24f4c7eae7c07e16f1058",
+        "criterion/e2e_check_cold-stdin_1.1_v1_1_medium/tombi/new/raw.csv": "c51a5545ea75eef5fc040fd204507097c2460ca470cd6d4daa9c7df863c5f8be",
+        "criterion/e2e_check_cold-stdin_1.1_v1_1_medium/tomlsmith/new/raw.csv": "bc11d491267e66b212a2f7af2803fe5280c10ae05bd8dff3a83c6f89986ead7e"
+      }
+    },
+    {
+      "resultDirectory": "release-20261023-041-macos-arm64-s2-check-v1_1_medium",
+      "environmentSha256": "44d7b174bb0c2c0ac0558df7b61e457ba8f67422f4503595efbcdb17ab370d73",
+      "verificationSha256": "514462bc7a0b33c994cc514807ca71d7ccae1b0874c53bbcca70da053e56c38b",
+      "peakRssSha256": "f1d68ab92733063e1d8889aa7cd00af5340707ff382f800aed80c87f9ce0faf0",
+      "rawCsvSha256": {
+        "criterion/e2e_check_cold-stdin_1.1_v1_1_medium/burntsushi-toml/new/raw.csv": "ffa51829ba50a90182c45a91c7b448a14fd5f8dfe05a644cdf23f6e583992036",
+        "criterion/e2e_check_cold-stdin_1.1_v1_1_medium/tombi/new/raw.csv": "04b372e7e5d184994d62315f3da932cf64e9ab181c4ddaf1696002c15741cd76",
+        "criterion/e2e_check_cold-stdin_1.1_v1_1_medium/tomlsmith/new/raw.csv": "901cdee0b781bfa56b96c7bf3a12a112a098075d7b52ddb612d5cb4f2f74e04e"
+      }
+    },
+    {
+      "resultDirectory": "release-20261023-041-macos-arm64-s3-check-v1_1_medium",
+      "environmentSha256": "481844640258105d3efe683fc727d753e124e03f4af982fde9ce92e2508f2a78",
+      "verificationSha256": "514462bc7a0b33c994cc514807ca71d7ccae1b0874c53bbcca70da053e56c38b",
+      "peakRssSha256": "035b1818abf103f807c358b8d8d1b789a8463627f2960e3efd391856980aa514",
+      "rawCsvSha256": {
+        "criterion/e2e_check_cold-stdin_1.1_v1_1_medium/burntsushi-toml/new/raw.csv": "c2f940bbaddd483736fd496b6bc177348d70aebe7e6eca9ed118177eb6f139a4",
+        "criterion/e2e_check_cold-stdin_1.1_v1_1_medium/tombi/new/raw.csv": "126df57db3a3eb068b9c0c0627d82b84e6cc3ae221af01c7a1d7d619c8839b0d",
+        "criterion/e2e_check_cold-stdin_1.1_v1_1_medium/tomlsmith/new/raw.csv": "f36edce73ee8830e95a1b277a81429d79114605bbd2c0d1fe11c9b3fe0c597a0"
+      }
+    },
+    {
+      "resultDirectory": "release-20261023-041-macos-arm64-s1-format-v1_0_medium",
+      "environmentSha256": "dc2d1a21c7c9f6b4d2091933d74b1e3da116c430230c126beec7fda04af863fe",
+      "verificationSha256": "ffafb698893616b909e7c6ae7af8ae3105cd8d35700b3c3a88669ec953f90d7f",
+      "peakRssSha256": "8927449bb4d4decf7bfee1d6990da87dc929faa20bde8f31b9f2e47c4bbe0c54",
+      "rawCsvSha256": {
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/dprint/new/raw.csv": "5600331d422d9b99e4131076f9b80b1c106f4bdeade6f84c5aa5de71dafa80a0",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/go-toml-tomll/new/raw.csv": "ac51fd2297cdda39ae43cbdcaaae083fb293d3bc66fa41d7a106f96c32c700a5",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/prettier/new/raw.csv": "af0fcd13a102f61d3ef715e6c5e255d8a8d7091df72dbba82c1d8af226ccd38c",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/taplo/new/raw.csv": "c2b82d9233cf506d30c47e919ca8346bf2ac8f49f44b31bda9525d66e265fd6d",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/tombi/new/raw.csv": "715da38c5112a990ef4f0a2170af4f7aa44cd9bec4f7d4af1c4b30f88208d5c2",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/tomlsmith/new/raw.csv": "f1f97252b583a292017137ca482d8e7ad5c1031f3c3c86b8a5ace9f1d8741421"
+      }
+    },
+    {
+      "resultDirectory": "release-20261023-041-macos-arm64-s2-format-v1_0_medium",
+      "environmentSha256": "217749907811b050c7ee6e07bf70223db1604c0a2a3b055e38298bfb177fbe80",
+      "verificationSha256": "ffafb698893616b909e7c6ae7af8ae3105cd8d35700b3c3a88669ec953f90d7f",
+      "peakRssSha256": "8cd5fa53f45e8ece33477df5450ca7165fd9b833dae2ae0cec75e619e1956cca",
+      "rawCsvSha256": {
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/dprint/new/raw.csv": "cf24ad9bf39c83e5741018efa7745019b080df8985a251ed91fdcf1292bd7e8f",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/go-toml-tomll/new/raw.csv": "b60e97fb88052701b21c8777037ca1078b03d902ec1e9b4e7e306d8d7bd2ee8f",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/prettier/new/raw.csv": "e120bdbf1ba55db663a06b8b1e683a4b96ff73c9fad512cd5a82045f548fd426",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/taplo/new/raw.csv": "c2e40fd590d33f545c6f57d24abc0b515928119e0f0a89445a607067ce9514c9",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/tombi/new/raw.csv": "809df17bd103d37a32e7d1716b79ab2c17c6925213ae91631542345c8009042c",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/tomlsmith/new/raw.csv": "3d06ee0b601fa75dedf387b3890e5796a3891f6cb3b1aa8e7a93b09eba06183a"
+      }
+    },
+    {
+      "resultDirectory": "release-20261023-041-macos-arm64-s3-format-v1_0_medium",
+      "environmentSha256": "10e3451e8cd66d0273b5c1b1092ef4f4b6d9f2ad54ee0020f54290e06432eadf",
+      "verificationSha256": "ffafb698893616b909e7c6ae7af8ae3105cd8d35700b3c3a88669ec953f90d7f",
+      "peakRssSha256": "0310d7577d2ca8091747cdfa8574d62c16ab29609fffc3ae4cbc3ddc96dc7d64",
+      "rawCsvSha256": {
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/dprint/new/raw.csv": "595103858d95f9cf71765817ffdd801bc59d0717bd43fb123465d8e48f784503",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/go-toml-tomll/new/raw.csv": "fbb8a2c819b9a1f776466d7bb4f8a93e4f91e2aa3ee9114384a44443e256b69c",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/prettier/new/raw.csv": "203c7f476196df404fa69445de03ff73919e5569b1bede6e95840d9ccee4e7a7",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/taplo/new/raw.csv": "44503ca66788648b7ca76a97406828139f707b21f3f80f74856120ee4739bda7",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/tombi/new/raw.csv": "7e57ed00ddd0a15548e8de10c2a96d9981a0194d4fb4e1f6659ebe060e4bb261",
+        "criterion/e2e_format_cold-stdin_1.0_v1_0_medium/tomlsmith/new/raw.csv": "1ccce4bc64f6e61f5a022b066383964c56b4c8521c43aa59a5e13a4b66e720ca"
+      }
+    },
+    {
+      "resultDirectory": "release-20261023-041-macos-arm64-s1-format-v1_1_medium",
+      "environmentSha256": "8b8ecb6e74087662ed646173c60145097a35bc20e516c735018457376d80efbc",
+      "verificationSha256": "b2c57e81b43d10c47ee762d62b0de3b0b1eba2a471020988bfb702b76f52153e",
+      "peakRssSha256": "26983b49e03890cdac556b667355b843a0f87344d68ed908b86798262c6b95b7",
+      "rawCsvSha256": {
+        "criterion/e2e_format_cold-stdin_1.1_v1_1_medium/dprint/new/raw.csv": "e73128f7e51019010346129c97dec436271eee5d038f68ea63d9f92e34a1dc49",
+        "criterion/e2e_format_cold-stdin_1.1_v1_1_medium/go-toml-tomll/new/raw.csv": "802dbf5dc13bf7b0262680eed6e4eaa5c3770c4bc6e6a4c012dcdcdac6e00fd1",
+        "criterion/e2e_format_cold-stdin_1.1_v1_1_medium/tombi/new/raw.csv": "0ed6fbfa80af0854d7b8d0ee4412d0d50acd3592f0ddea928119c091629e3859",
+        "criterion/e2e_format_cold-stdin_1.1_v1_1_medium/tomlsmith/new/raw.csv": "0cef451c4daf46cf42621a0802c93ca2446d0b219ea1a227c03d9afa5a0763c4"
+      }
+    },
+    {
+      "resultDirectory": "release-20261023-041-macos-arm64-s2-format-v1_1_medium",
+      "environmentSha256": "ce62701151a1fa5c71a1fb51709979645851b0154773d25102cfb1be0f6c50bd",
+      "verificationSha256": "b2c57e81b43d10c47ee762d62b0de3b0b1eba2a471020988bfb702b76f52153e",
+      "peakRssSha256": "da68c1f211a269cfc734577cb96da707fa2137df04f4c782bec52141f6d9d195",
+      "rawCsvSha256": {
+        "criterion/e2e_format_cold-stdin_1.1_v1_1_medium/dprint/new/raw.csv": "e1fa3faea9273444d3972e151affbba407d5cc943b9564adf13e2bec798dfc82",
+        "criterion/e2e_format_cold-stdin_1.1_v1_1_medium/go-toml-tomll/new/raw.csv": "7877767ed85346d8135918a8b8d625e35ce03d7e90c80a838dd4ff475be6ef9d",
+        "criterion/e2e_format_cold-stdin_1.1_v1_1_medium/tombi/new/raw.csv": "9347cbfc10b4c61a07bd97a47ca209ec3c8361bf41eacd6790544aa8a88d10fa",
+        "criterion/e2e_format_cold-stdin_1.1_v1_1_medium/tomlsmith/new/raw.csv": "8eaabae9eb6bfc3c45ca1deef031e6ed4463ddbe3a0125718b561ce6c75ffe08"
+      }
+    },
+    {
+      "resultDirectory": "release-20261023-041-macos-arm64-s3-format-v1_1_medium",
+      "environmentSha256": "743295107688cd805f337be2c6ab24263340f0cda70dc97a340f833059306461",
+      "verificationSha256": "b2c57e81b43d10c47ee762d62b0de3b0b1eba2a471020988bfb702b76f52153e",
+      "peakRssSha256": "0ff9e82450d756cca4db9705f7ab5338b19d11d0218fcec0d98607a569c753d7",
+      "rawCsvSha256": {
+        "criterion/e2e_format_cold-stdin_1.1_v1_1_medium/dprint/new/raw.csv": "5386852891d54969c8a7b16f6cef9ebff29b802b2c7f93348214d4d20cfa32db",
+        "criterion/e2e_format_cold-stdin_1.1_v1_1_medium/go-toml-tomll/new/raw.csv": "e62cf53adee7eb0665df55ebb96dea2dc02205ba0283d839d33aa5cf7493241e",
+        "criterion/e2e_format_cold-stdin_1.1_v1_1_medium/tombi/new/raw.csv": "2376c0d3ba1b6c7365d23595e7ef5f39e8e9cf6af93ace0e187fa54d021a1d62",
+        "criterion/e2e_format_cold-stdin_1.1_v1_1_medium/tomlsmith/new/raw.csv": "9d41574b3a0d6c29f6846ea70173ade978f94fcc5afbee92773a83d71a7aece3"
+      }
+    }
+  ],
   "lanes": [
     {
-      "resultDirectory": "release-20260903-macos-arm64-check-v1_0-medium",
+      "resultDirectory": "release-20261023-041-macos-arm64-s2-check-v1_0_medium",
+      "sessionDirectories": [
+        "release-20261023-041-macos-arm64-s1-check-v1_0_medium",
+        "release-20261023-041-macos-arm64-s2-check-v1_0_medium",
+        "release-20261023-041-macos-arm64-s3-check-v1_0_medium"
+      ],
       "laneId": "e2e/check/cold-stdin/1.0/v1_0_medium",
       "operation": "check",
       "tomlVersion": "1.0",
       "fixtureId": "v1_0_medium",
+      "inputBytes": 131209,
+      "fixtureSha256": "250dc01b02c4efeeb7854fc63366bae29ce301774d31e1fcbc7df331a1bc7a11",
       "products": [
         {
           "id": "tomlsmith",
           "displayName": "TomlSmith native CLI",
-          "medianMs": 10.205408333333335,
-          "throughputMibPerSecond": 12.261209869735506,
-          "peakRssMib": 6.984375
+          "medianMs": 7.6532057125,
+          "throughputMibPerSecond": 16.35009668915229,
+          "peakRssMib": 7.53125,
+          "sessionMediansMs": [
+            8.506602303571428,
+            7.6532057125,
+            8.187945344017095
+          ],
+          "medianRangeMs": [
+            7.6532057125,
+            8.506602303571428
+          ]
         },
         {
           "id": "burntsushi-toml",
           "displayName": "BurntSushi/toml tomlv",
-          "medianMs": 12.068058350000001,
-          "throughputMibPerSecond": 10.368747792916302,
-          "peakRssMib": 8.96875
+          "medianMs": 9.845093781818182,
+          "throughputMibPerSecond": 12.7099503726859,
+          "peakRssMib": 9.296875,
+          "sessionMediansMs": [
+            10.345429477272727,
+            9.845093781818182,
+            10.30205941904762
+          ],
+          "medianRangeMs": [
+            9.845093781818182,
+            10.345429477272727
+          ]
         },
         {
           "id": "taplo",
           "displayName": "Taplo CLI",
-          "medianMs": 23.3388645625,
-          "throughputMibPerSecond": 5.36147133663061,
-          "peakRssMib": 18.59375
+          "medianMs": 18.551746,
+          "throughputMibPerSecond": 6.744952921484999,
+          "peakRssMib": 19.015625,
+          "sessionMediansMs": [
+            18.538715172941178,
+            18.551746,
+            18.960869333333335
+          ],
+          "medianRangeMs": [
+            18.538715172941178,
+            18.960869333333335
+          ]
         },
         {
           "id": "tombi",
           "displayName": "Tombi",
-          "medianMs": 206.803896,
-          "throughputMibPerSecond": 0.6050691297486371,
-          "peakRssMib": 27.25
+          "medianMs": 173.2016875,
+          "throughputMibPerSecond": 0.7224563177616135,
+          "peakRssMib": 26.875,
+          "sessionMediansMs": [
+            177.469521,
+            173.2016875,
+            183.0926875
+          ],
+          "medianRangeMs": [
+            173.2016875,
+            183.0926875
+          ]
         }
       ]
     },
     {
-      "resultDirectory": "release-20260903-macos-arm64-check-v1_1-medium",
+      "resultDirectory": "release-20261023-041-macos-arm64-s2-check-v1_1_medium",
+      "sessionDirectories": [
+        "release-20261023-041-macos-arm64-s1-check-v1_1_medium",
+        "release-20261023-041-macos-arm64-s2-check-v1_1_medium",
+        "release-20261023-041-macos-arm64-s3-check-v1_1_medium"
+      ],
       "laneId": "e2e/check/cold-stdin/1.1/v1_1_medium",
       "operation": "check",
       "tomlVersion": "1.1",
       "fixtureId": "v1_1_medium",
+      "inputBytes": 131282,
+      "fixtureSha256": "b941ea26c566d6bf426db6d351016e1f4fbd7a5c20947714bcd9e216acd6490b",
       "products": [
         {
           "id": "tomlsmith",
           "displayName": "TomlSmith native CLI",
-          "medianMs": 8.165616181818182,
-          "throughputMibPerSecond": 15.33261774968314,
-          "peakRssMib": 6.953125
+          "medianMs": 8.685371466517859,
+          "throughputMibPerSecond": 14.41507390778769,
+          "peakRssMib": 7.5625,
+          "sessionMediansMs": [
+            8.645764732007576,
+            8.685371466517859,
+            8.51497216268116
+          ],
+          "medianRangeMs": [
+            8.51497216268116,
+            8.685371466517859
+          ]
         },
         {
           "id": "burntsushi-toml",
           "displayName": "BurntSushi/toml tomlv",
-          "medianMs": 10.07112384375,
-          "throughputMibPerSecond": 12.431608780597298,
-          "peakRssMib": 8.890625
+          "medianMs": 10.220478833333333,
+          "throughputMibPerSecond": 12.249941871423276,
+          "peakRssMib": 9.265625,
+          "sessionMediansMs": [
+            10.398293470238094,
+            10.220478833333333,
+            9.959100845238096
+          ],
+          "medianRangeMs": [
+            9.959100845238096,
+            10.398293470238094
+          ]
         },
         {
           "id": "tombi",
           "displayName": "Tombi",
-          "medianMs": 193.3125415,
-          "throughputMibPerSecond": 0.6476572633878765,
-          "peakRssMib": 27.28125
+          "medianMs": 171.6326875,
+          "throughputMibPerSecond": 0.7294663588277456,
+          "peakRssMib": 26.859375,
+          "sessionMediansMs": [
+            184.6202295,
+            171.6326875,
+            178.942771
+          ],
+          "medianRangeMs": [
+            171.6326875,
+            184.6202295
+          ]
         }
       ]
     },
     {
-      "resultDirectory": "release-20260903-macos-arm64-format-v1_0-medium",
+      "resultDirectory": "release-20261023-041-macos-arm64-s2-format-v1_0_medium",
+      "sessionDirectories": [
+        "release-20261023-041-macos-arm64-s1-format-v1_0_medium",
+        "release-20261023-041-macos-arm64-s2-format-v1_0_medium",
+        "release-20261023-041-macos-arm64-s3-format-v1_0_medium"
+      ],
       "laneId": "e2e/format/cold-stdin/1.0/v1_0_medium",
       "operation": "format",
       "tomlVersion": "1.0",
       "fixtureId": "v1_0_medium",
+      "inputBytes": 131209,
+      "fixtureSha256": "250dc01b02c4efeeb7854fc63366bae29ce301774d31e1fcbc7df331a1bc7a11",
       "products": [
-        {
-          "id": "tomlsmith",
-          "displayName": "TomlSmith native CLI",
-          "medianMs": 8.345570126923077,
-          "throughputMibPerSecond": 14.993661484872336,
-          "peakRssMib": 6.953125
-        },
         {
           "id": "go-toml-tomll",
           "displayName": "pelletier/go-toml tomll",
-          "medianMs": 10.913395282608695,
-          "throughputMibPerSecond": 11.465785865994668,
-          "peakRssMib": 6.453125
+          "medianMs": 7.622238533333333,
+          "throughputMibPerSecond": 16.416522893390205,
+          "peakRssMib": 6.765625,
+          "sessionMediansMs": [
+            7.34583874404762,
+            7.622238533333333,
+            7.266146232057417
+          ],
+          "medianRangeMs": [
+            7.266146232057417,
+            7.622238533333333
+          ]
+        },
+        {
+          "id": "tomlsmith",
+          "displayName": "TomlSmith native CLI",
+          "medianMs": 8.160546274038461,
+          "throughputMibPerSecond": 15.33361238075836,
+          "peakRssMib": 7.5625,
+          "sessionMediansMs": [
+            9.67615833531746,
+            8.160546274038461,
+            8.152499732919255
+          ],
+          "medianRangeMs": [
+            8.152499732919255,
+            9.67615833531746
+          ]
         },
         {
           "id": "dprint",
           "displayName": "dprint + TOML plugin",
-          "medianMs": 20.120377604166663,
-          "throughputMibPerSecond": 6.2191006472679105,
-          "peakRssMib": 19.9375
+          "medianMs": 14.825297084848486,
+          "throughputMibPerSecond": 8.440347108405112,
+          "peakRssMib": 19.765625,
+          "sessionMediansMs": [
+            15.05263825,
+            14.825297084848486,
+            15.389726995833334
+          ],
+          "medianRangeMs": [
+            14.825297084848486,
+            15.389726995833334
+          ]
         },
         {
           "id": "taplo",
           "displayName": "Taplo CLI",
-          "medianMs": 22.0740599375,
-          "throughputMibPerSecond": 5.668674169393387,
-          "peakRssMib": 18.765625
+          "medianMs": 21.8238463125,
+          "throughputMibPerSecond": 5.733666356955458,
+          "peakRssMib": 19.578125,
+          "sessionMediansMs": [
+            26.169839285714282,
+            21.8238463125,
+            22.0480520625
+          ],
+          "medianRangeMs": [
+            21.8238463125,
+            26.169839285714282
+          ]
         },
         {
           "id": "tombi",
           "displayName": "Tombi",
-          "medianMs": 655.136438,
-          "throughputMibPerSecond": 0.19099937985947846,
-          "peakRssMib": 31.859375
+          "medianMs": 619.4788755,
+          "throughputMibPerSecond": 0.2019934146751186,
+          "peakRssMib": 31.3125,
+          "sessionMediansMs": [
+            618.848208,
+            619.4788755,
+            613.2266245
+          ],
+          "medianRangeMs": [
+            613.2266245,
+            619.4788755
+          ]
         },
         {
           "id": "prettier",
           "displayName": "Prettier + prettier-plugin-toml",
-          "medianMs": 678.412521,
-          "throughputMibPerSecond": 0.18444626168883407,
-          "peakRssMib": 594.09375
+          "medianMs": 687.9624375,
+          "throughputMibPerSecond": 0.181885880043193,
+          "peakRssMib": 564.734375,
+          "sessionMediansMs": [
+            682.121,
+            687.9624375,
+            703.690542
+          ],
+          "medianRangeMs": [
+            682.121,
+            703.690542
+          ]
         }
       ]
     },
     {
-      "resultDirectory": "release-20260903-macos-arm64-format-v1_1-medium",
+      "resultDirectory": "release-20261023-041-macos-arm64-s2-format-v1_1_medium",
+      "sessionDirectories": [
+        "release-20261023-041-macos-arm64-s1-format-v1_1_medium",
+        "release-20261023-041-macos-arm64-s2-format-v1_1_medium",
+        "release-20261023-041-macos-arm64-s3-format-v1_1_medium"
+      ],
       "laneId": "e2e/format/cold-stdin/1.1/v1_1_medium",
       "operation": "format",
       "tomlVersion": "1.1",
       "fixtureId": "v1_1_medium",
+      "inputBytes": 131282,
+      "fixtureSha256": "b941ea26c566d6bf426db6d351016e1f4fbd7a5c20947714bcd9e216acd6490b",
       "products": [
-        {
-          "id": "tomlsmith",
-          "displayName": "TomlSmith native CLI",
-          "medianMs": 8.362284561085973,
-          "throughputMibPerSecond": 14.972017597806564,
-          "peakRssMib": 7.015625
-        },
         {
           "id": "go-toml-tomll",
           "displayName": "pelletier/go-toml tomll",
-          "medianMs": 9.870651041666667,
-          "throughputMibPerSecond": 12.684094603075456,
-          "peakRssMib": 6.5625
+          "medianMs": 7.74342156372549,
+          "throughputMibPerSecond": 16.16859815471668,
+          "peakRssMib": 6.84375,
+          "sessionMediansMs": [
+            6.5751005750000004,
+            7.74342156372549,
+            7.239543441666666
+          ],
+          "medianRangeMs": [
+            6.5751005750000004,
+            7.74342156372549
+          ]
+        },
+        {
+          "id": "tomlsmith",
+          "displayName": "TomlSmith native CLI",
+          "medianMs": 8.04279119117647,
+          "throughputMibPerSecond": 15.56676887792377,
+          "peakRssMib": 7.625,
+          "sessionMediansMs": [
+            8.779883672619048,
+            8.04279119117647,
+            7.809096420940171
+          ],
+          "medianRangeMs": [
+            7.809096420940171,
+            8.779883672619048
+          ]
         },
         {
           "id": "dprint",
           "displayName": "dprint + TOML plugin",
-          "medianMs": 18.988364027777777,
-          "throughputMibPerSecond": 6.593525983770472,
-          "peakRssMib": 19.9375
+          "medianMs": 15.643362263736263,
+          "throughputMibPerSecond": 8.003411894173093,
+          "peakRssMib": 19.75,
+          "sessionMediansMs": [
+            14.57991942261905,
+            15.643362263736263,
+            15.405399291666669
+          ],
+          "medianRangeMs": [
+            14.57991942261905,
+            15.643362263736263
+          ]
         },
         {
           "id": "tombi",
           "displayName": "Tombi",
-          "medianMs": 721.461979,
-          "throughputMibPerSecond": 0.17353689487557225,
-          "peakRssMib": 31.546875
+          "medianMs": 626.9406665,
+          "throughputMibPerSecond": 0.19970035171812436,
+          "peakRssMib": 31.625,
+          "sessionMediansMs": [
+            689.9790835,
+            626.9406665,
+            639.0646245
+          ],
+          "medianRangeMs": [
+            626.9406665,
+            689.9790835
+          ]
         }
       ]
     }

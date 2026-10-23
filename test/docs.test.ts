@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { extname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -97,7 +98,7 @@ describe("documentation integrity", () => {
     }
   });
 
-  test("the published benchmark data records reproducible package provenance", () => {
+  test("published benchmark ranges and throughput agree with the recorded sessions", () => {
     const data = JSON.parse(readFileSync(benchmarkDataPath, "utf8"));
     expect(data.lanes.map((lane: { operation: string; tomlVersion: string }) =>
       `${lane.operation}/${lane.tomlVersion}`,
@@ -111,26 +112,37 @@ describe("documentation integrity", () => {
           ),
       ),
     ).toBe(true);
-    expect(data.provenance).toEqual({
-      benchmarkRevision: "1b637243fcbd7ad82247676e8a1fe337187284f7",
-      runtimeInputsSha256: "61cee237479415d408a15bafa2f5284408024ea85b921d82c09cd3feeb8a4825",
-      packages: {
-        tomlsmith: "0.4.0",
-        "tomlsmith-cli": "0.4.0",
-      },
-    });
-    expect(data.environment).toEqual({
-      measuredOn: "2026-09-03",
-      operatingSystem: "macOS 26.6.2",
-      architecture: "aarch64",
-      cpu: "Apple M4 Pro",
-      rustc: "1.92.0",
-    });
-    expect(
-      data.lanes.every(({ resultDirectory }: { resultDirectory: string }) =>
-        resultDirectory.startsWith("release-20260903-macos-arm64-"),
-      ),
-    ).toBe(true);
+    const canonical = (value: unknown): unknown => {
+      if (Array.isArray(value)) return value.map(canonical);
+      if (value !== null && typeof value === "object") {
+        return Object.fromEntries(Object.entries(value).sort(([a], [b]) =>
+          a < b ? -1 : a > b ? 1 : 0,
+        ).map(([key, entry]) => [key, canonical(entry)]));
+      }
+      return value;
+    };
+    expect(createHash("sha256").update(JSON.stringify(canonical(data.runtimeInputs))).digest("hex"))
+      .toBe(data.provenance.runtimeInputsSha256);
+    expect(data.provenance.benchmarkRevision).toMatch(/^[a-f0-9]{40}$/u);
+    expect(data.bundles).toHaveLength(data.lanes.length * data.measurement.sessions);
+    const recordedDirectories = new Set(data.bundles.map(
+      (bundle: { resultDirectory: string }) => bundle.resultDirectory,
+    ));
+    for (const lane of data.lanes) {
+      expect(lane.sessionDirectories).toHaveLength(data.measurement.sessions);
+      expect(lane.resultDirectory).toBe(lane.sessionDirectories[data.measurement.primarySession - 1]);
+      for (const directory of lane.sessionDirectories) expect(recordedDirectories.has(directory)).toBe(true);
+      for (const product of lane.products) {
+        expect(product.sessionMediansMs).toHaveLength(data.measurement.sessions);
+        expect(product.medianMs).toBe(product.sessionMediansMs[data.measurement.primarySession - 1]);
+        expect(product.medianRangeMs).toEqual([
+          Math.min(...product.sessionMediansMs), Math.max(...product.sessionMediansMs),
+        ]);
+        expect(product.medianMs).toBeGreaterThan(0);
+        expect(product.peakRssMib).toBeGreaterThan(0);
+        expect(product.throughputMibPerSecond).toBeCloseTo(lane.inputBytes / 1048576 / (product.medianMs / 1000), 10);
+      }
+    }
     expect(data).not.toHaveProperty("evidencePath");
     expect(data).not.toHaveProperty("checksumPath");
   });

@@ -13,6 +13,8 @@ const copy = {
     details: "See TOML 1.1 and all four lanes",
     compactLower: "median latency · lower is better",
     compactTomll: "* tomll does not preserve comments or literal styles.",
+    range: "session range",
+    sessions: "Three sequential sessions; displayed medians use session 2, selected before measurement. Ranges show observed session drift, not confidence intervals.",
     lower: "median latency · logarithmic scale · lower is better",
     tomll:
       "* tomll is a semantic re-printer: it discards comments and rewrites literal styles, so it does less work than the comment-preserving formatters.",
@@ -25,6 +27,8 @@ const copy = {
     details: "查看 TOML 1.1 与完整四条赛道",
     compactLower: "耗时中位数 · 越短越好",
     compactTomll: "* tomll 不保留注释和字面量写法。",
+    range: "会话范围",
+    sessions: "顺序执行三次会话；显示测量前指定的第二次会话中位数。范围反映会话波动，并非置信区间。",
     lower: "耗时中位数 · 对数刻度 · 越短越好",
     tomll:
       "* tomll 是语义重打印器，会丢弃注释并改写字面量，因此它完成的工作少于保留注释的格式化器。",
@@ -120,6 +124,9 @@ function ComparisonPanels({
                             {product.throughputMibPerSecond.toFixed(2)} MiB/s
                             {" · "}
                             {product.peakRssMib.toFixed(2)} MiB RSS
+                            <span className="ts-bar__range">
+                              {text.range}: {product.medianRangeMs[0].toFixed(2)}–{product.medianRangeMs[1].toFixed(2)} ms
+                            </span>
                           </>
                         )}
                       </span>
@@ -155,6 +162,7 @@ function DetailedResults({ locale }: { locale: Locale }) {
   return (
     <>
       <ComparisonPanels locale={locale} />
+      <p className="ts-footnote">{text.sessions}</p>
       <p className="ts-footnote">{text.tomll}</p>
     </>
   );

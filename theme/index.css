@@ -757,6 +757,20 @@ html.dark .ts-hero__panel {
   font-weight: 800;
 }
 
+.ts-benchmark-results--page .ts-bar-row {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+}
+
+.ts-benchmark-results--page .ts-bar__meta {
+  font-size: 0.7rem;
+  line-height: 1.6;
+}
+
+.ts-bar__range {
+  display: block;
+}
+
 .ts-footnote {
   margin: 18px 0 0;
   color: var(--ts-muted);
